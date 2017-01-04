@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HealthSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="hashpassword" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Membership">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="int" Nullable="false" />
+          <Property Name="SleepHour" Type="int" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="Waistline" Type="int" />
+          <Property Name="DailyJogPath" Type="int" Nullable="false" />
+          <Property Name="MemberName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sex" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="BMR" Type="int" Nullable="false" />
+          <Property Name="FER" Type="int" Nullable="false" />
+          <Property Name="REE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherHealthBar">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="int" Nullable="false" />
+          <Property Name="Addiction" Type="int" />
+          <Property Name="Today" Type="datetime" Nullable="false" />
+          <Property Name="HDC(mg/dl)" Type="int" />
+        </EntityType>
+        <EntityType Name="Parents">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="FatherName" Type="varchar" MaxLength="50" />
+          <Property Name="MotherName" Type="varchar" MaxLength="50" />
+          <Property Name="MemberId" Type="int" Nullable="false" />
+          <Property Name="BloodType" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_OtherHealthBar_OtherHealthBar">
+          <End Role="OtherHealthBar" Type="Self.OtherHealthBar" Multiplicity="1" />
+          <End Role="OtherHealthBar1" Type="Self.OtherHealthBar" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OtherHealthBar">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="OtherHealthBar1">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HealthSiteModelStoreContainer">
+          <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membership" EntityType="Self.Membership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherHealthBar" EntityType="Self.OtherHealthBar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parents" EntityType="Self.Parents" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_OtherHealthBar_OtherHealthBar" Association="Self.FK_OtherHealthBar_OtherHealthBar">
+            <End Role="OtherHealthBar" EntitySet="OtherHealthBar" />
+            <End Role="OtherHealthBar1" EntitySet="OtherHealthBar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HealthSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hashpassword" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Membership">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="Int32" Nullable="false" />
+          <Property Name="SleepHour" Type="Int32" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Waistline" Type="Int32" />
+          <Property Name="DailyJogPath" Type="Int32" Nullable="false" />
+          <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="BMR" Type="Int32" Nullable="false" />
+          <Property Name="FER" Type="Int32" Nullable="false" />
+          <Property Name="REE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherHealthBar">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="Int32" Nullable="false" />
+          <Property Name="Addiction" Type="Int32" />
+          <Property Name="Today" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HDC_mg_dl_" Type="Int32" />
+          <NavigationProperty Name="OtherHealthBar1" Relationship="Self.FK_OtherHealthBar_OtherHealthBar" FromRole="OtherHealthBar" ToRole="OtherHealthBar1" />
+          <NavigationProperty Name="OtherHealthBar2" Relationship="Self.FK_OtherHealthBar_OtherHealthBar" FromRole="OtherHealthBar1" ToRole="OtherHealthBar" />
+        </EntityType>
+        <EntityType Name="Parent">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MotherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberId" Type="Int32" Nullable="false" />
+          <Property Name="BloodType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_OtherHealthBar_OtherHealthBar">
+          <End Role="OtherHealthBar" Type="Self.OtherHealthBar" Multiplicity="1" />
+          <End Role="OtherHealthBar1" Type="Self.OtherHealthBar" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OtherHealthBar">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="OtherHealthBar1">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HealthSiteEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="members" EntityType="Self.member" />
+          <EntitySet Name="Memberships" EntityType="Self.Membership" />
+          <EntitySet Name="OtherHealthBars" EntityType="Self.OtherHealthBar" />
+          <EntitySet Name="Parents" EntityType="Self.Parent" />
+          <AssociationSet Name="FK_OtherHealthBar_OtherHealthBar" Association="Self.FK_OtherHealthBar_OtherHealthBar">
+            <End Role="OtherHealthBar" EntitySet="OtherHealthBars" />
+            <End Role="OtherHealthBar1" EntitySet="OtherHealthBars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HealthSiteModelStoreContainer" CdmEntityContainer="HealthSiteEntities3">
+          <EntitySetMapping Name="members">
+            <EntityTypeMapping TypeName="HealthSiteModel.member">
+              <MappingFragment StoreEntitySet="member">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="hashpassword" ColumnName="hashpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memberships">
+            <EntityTypeMapping TypeName="HealthSiteModel.Membership">
+              <MappingFragment StoreEntitySet="Membership">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="SleepHour" ColumnName="SleepHour" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Waistline" ColumnName="Waistline" />
+                <ScalarProperty Name="DailyJogPath" ColumnName="DailyJogPath" />
+                <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="BMR" ColumnName="BMR" />
+                <ScalarProperty Name="FER" ColumnName="FER" />
+                <ScalarProperty Name="REE" ColumnName="REE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherHealthBars">
+            <EntityTypeMapping TypeName="HealthSiteModel.OtherHealthBar">
+              <MappingFragment StoreEntitySet="OtherHealthBar">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="Addiction" ColumnName="Addiction" />
+                <ScalarProperty Name="Today" ColumnName="Today" />
+                <ScalarProperty Name="HDC_mg_dl_" ColumnName="HDC(mg/dl)" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parents">
+            <EntityTypeMapping TypeName="HealthSiteModel.Parent">
+              <MappingFragment StoreEntitySet="Parents">
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

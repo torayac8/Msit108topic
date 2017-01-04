@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainPage.master.cs" Inherits="MainPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>第二頁</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="~/assets/css/main.css" />
+</head>
+<body>
+    <header id="header">
+				<div class="inner">
+					<a href="../default.aspx" class="logo">A Healthy Project</a>
+					<nav id="nav">
+						<%--<a href="index.html">Home</a>
+						<a href="generic.html">Generic</a>
+						<a href="elements.html">Elements</a>--%>
+					</nav>
+				</div>
+			</header>
+    <section id="main">
+        <div class="inner">
+            <header class="major special">
+                <h1>促進你我的健康</h1>
+                <p>系統資料夾包羅萬象，可以自行選擇你所想要執行的程式狀態，並且按圖索驥，循序漸進，促進您找回你要的健康資訊。</p>
+            </header>
+            <a href="#" class="image fit">
+                <img src="../images/Page2.png" alt="" /></a>
+            <p>天婦羅油炸的真諦在於提升食物的鮮味和甘甜，而這也是天婦羅的特色，資訊傳播快速的時代，飲食文化在各地產生變化，不只麥當勞成為全球化的象徵和飲食，泰國菜、義大利披薩和中式餐飲也在世界各國流行。</p>
+            <p>日語「天」，漢字寫成「天麩羅」，相傳是山東京傳所取的名字，「天」乃「天竺」，有外來食物的意思，「麩」是裹上小麥粉的麵衣，「羅」則有薄薄一層的意思，中文翻譯成天婦羅，是江戶時代的4大食之一，一般庶民都享用得起，從天婦羅可以看到文化交流，以及日本人如何轉化中國、葡萄牙所傳入的飲食文化。</p>
+            <p><a href="http://www.dreye-health.com/SingularController?service=columnGetContent&id=24081" title="驚！天婦羅來自葡萄牙？">連結三</a></p><hr />
+            <p>五官不僅僅決定了我們的長相，美醜，其實也一定程度上反映了我們的身體健康。</p>
+            <h4>眼睛是肝臟的窗口</h4><p>肝開竅於目，其健康與否可以直接從眼睛看出，而且眼睛的顏色很重要。</p><p>感覺上看，當眼睛乾澀，雖是因久視造成，但根源是肝血不足。</p><p>顏色上看，經常眼紅、視力模糊，都可能是肝火旺盛。</p>
+            <p>眼仁出現黃色，就需要考慮有否患有肝炎。</p>
+            <h4>鼻子告訴你肺的好壞</h4>
+            <p>從鼻子的顏色，出汗情況以及周邊的顏色都可以解內臟情況</p><p>長期出汗，肺氣不足。</p><p>發紅，肺熱。</p><p>乾燥常出血，陰虛火旺。</p>
+            <h4>心臟好壞看舌頭</h4><p>舌頭紅潤、靈活，說話言語流利，是心臟健康表現，陽氣十足。</p><a href="http://www.fun01.net/post208753" title="連結四" target="_blank">連結四</a><hr />
+            <h4>『健康報表』</h4>
+            <p>社會競爭，每月在緊盯公司的財務報表時，也須多一些時間關心每年例行性健康檢查的『健康報表』。健康報表中的生化指標，你認識幾個指標? 又有幾個紅字呢?『腰圍、血壓、血糖、三酸甘油脂、高密度膽固醇(好的膽固醇)』與代謝性症候群最具相關性</p>
+            <p>代謝症侯群::三酸甘油脂>150mg/dl。高密度膽固醇，男性<40mg/dl,女性<50mg/dl。空腹血糖>100mg/dl。血壓男性>130水銀柱，女性>85水銀柱。腰圍男性>90，女性>80。若符合三項，即列為代謝性症候群</p>
+            <p>燃燒體內的脂肪細胞是最健康且最不容易復胖的方式，市面上有許多吃了會有大反映的效果(如拉肚子或抑制食慾)的減重產品，但這些只是治標不治本，且容易會復胖的機會。燃燒訴求的減重素材才是徹底的將體內的脂肪分解，讓你瘦的好健康與受出好曲線。</p>
+            <a href="http://health.wedargroup.com/%E4%BA%BA%E7%94%9F%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E3%80%8E%E5%81%A5%E5%BA%B7%E5%A0%B1%E8%A1%A8%E3%80%8F%EF%BC%8C%E9%97%9C%E9%8D%B5%E6%95%B8%E5%AD%97%E6%82%A8%E5%90%88%E6%A0%BC%E4%BA%86%E5%97%8E/" title="連結五" target="_blank">連結五</a><hr />
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </div>
+    </section>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+</body>
+</html>
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	
+	<body>
+
+		<!-- Header -->
+			
+		<!-- Main -->
+			
+
+		<!-- Footer -->
+			<%--<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="alt" /></li>
+						</ul>
+					</form>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+					</div>
+				</div>
+			</section>--%>
+
+		<!-- Scripts -->
+			<script src="~/assets/js/jquery.min.js"></script>
+			<script src="~/assets/js/skel.min.js"></script>
+			<script src="~/assets/js/util.js"></script>
+			<script src="~/assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introspect by TEMPLATED</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div>
+             <header id="header">
+                    <div class="inner">
+                        <a href="default.aspx" class="logo">A Healthy Project</a>
+                        <nav id="nav">
+                            <a href="BackUp/BackDataSource.aspx">Modify Patients' Data</a>
+                            <a href="Login.aspx">使用者登入</a>
+                            <a href="Registration.aspx">註冊</a>
+                        </nav>
+                    </div>
+                </header>
+
+               
+                <%--<section id="banner">
+                    <div class="inner">
+                        <h1>Introspect: <span>A free + fully responsive<br />
+                            site template by TEMPLATED</span></h1>
+                        <ul class="actions">
+                            <li><a href="#" class="button alt">Get Started</a></li>
+                        </ul>
+                    </div>
+                </section>--%>
+                <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+                <section id="one">
+                    <div class="inner">
+                        <header>
+                            <h2>健康促進系統</h2>
+                        </header>
+                        <p>黃帝曰：經脈十二者，別為五行，分為四時，何失而亂？何得而治？岐伯曰：五行有序，四時有分，相順則治，相逆則亂。
+                            <a href="http://cht.a-hospital.com/w/%E7%81%B5%E6%9E%A2/%E4%BA%94%E4%B9%B1%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B" title="靈樞/五亂第三十四">連結一</a></p>
+                        <p>黃帝問於岐伯曰：凡刺之道，必通十二經絡之所終始，絡脈之所別處，五俞之所留，六腑之所與合，四時之所出入，五臟之所溜處，闊數之度，淺深之狀，高下所至。願聞其解。
+                            <a href="http://cht.a-hospital.com/w/%E7%81%B5%E6%9E%A2/%E6%9C%AC%E8%BE%93%E7%AC%AC%E4%BA%8C" title="靈樞/本輸第二">連結二</a></p>
+
+                        <ul class="actions">
+                            <li><a href="http://cht.a-hospital.com/w/%E9%BB%84%E5%B8%9D%E5%86%85%E7%BB%8F" class="button alt" title="醫學百科/黃帝內經">了解更多</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+        </div>
+        <section id="two">
+            <div class="inner">
+                <article>
+                    <div class="content">
+                        <div class="image fit">
+                            
+                            <a href="http://obesity.hpa.gov.tw/TC/SportCalculate.aspx" alt="" target="_blank"><img src="images/pic01.jpg" alt="國民健康署肥胖防治網"  /></a>
+                        </div>
+                        <p>Face the truth,you are not healthy.</p><p>Click picture for tips of the government.</p>
+                    </div>
+                </article>
+                <article class="alt">
+                    <div class="content">
+                        <div class="image fit">
+                            <a href="http://www.dreye-health.com/SingularController?service=goCheck&path=all" alt="" target="_blank"><img src="images/pic02.jpg" alt="小算式" /></a>
+                        </div>
+                        <p>對於自己的身體脂肪還不夠了解的嗎??請點圖片連接至計算公式網頁。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <%--    <section id="three">
+                <div class="inner">
+                    <article>
+                        <div class="content">
+                            <span class="icon fa-laptop"></span>
+                            <header>
+                                <h3>Tempus Feugiat</h3>
+                            </header>
+                            <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="content">
+                            <span class="icon fa-diamond"></span>
+                            <header>
+                                <h3>Aliquam Nulla</h3>
+                            </header>
+                            <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="content">
+                            <span class="icon fa-laptop"></span>
+                            <header>
+                                <h3>Sed Magna</h3>
+                            </header>
+                            <p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula.</p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>--%>
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <section id="footer">
+        <div class="inner">
+            <header>
+                <h2>與我聯繫</h2>
+            </header>
+            <form method="post" action="#">
+                <div class="field half first">
+                    <label for="name">名稱</label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                    <label for="email">伊媚</label>
+                    <input type="text" name="email" id="email" />
+                </div>
+                <div class="field">
+                    <label for="message">訊息</label>
+                    <textarea name="message" id="message" rows="4"></textarea>
+                </div>
+                <ul class="actions">
+                    <li>
+                        <input type="submit" value="Send Message" class="alt" /></li>
+                </ul>
+            </form>
+            <div class="copyright">
+                &copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<body>
+
+    <!-- Header -->
+
+    <!-- Banner -->
+
+
+    <!-- One -->
+
+
+    <!-- Two -->
+
+
+    <!-- Three -->
+
+    <!-- Footer -->
+
+
+</body>
+</html>
